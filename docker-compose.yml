@@ -22,7 +22,7 @@ services:
     environment:
       DB_HOST: db
       DB_USER: root
-      DB_PASSWORD: password
+      DB_PASSWORD: toor
       DB_NAME: safebase
     command: npm run dev
     depends_on:

@@ -1,6 +1,9 @@
 # Image Node.js officielle
 FROM node:18
 
+# Installer mysql-client (inclut mysqldump)
+RUN apt-get update && apt-get install -y default-mysql-client
+
 # Créer et utiliser le dossier /app
 WORKDIR /app
 
