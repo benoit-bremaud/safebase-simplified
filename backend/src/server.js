@@ -1,6 +1,7 @@
 import { connectToDatabase } from './db.js';
 import fastify from 'fastify';
 import { registerRoutes } from './routes/index.js';
+import { scheduleAutomaticBackup } from './services/backupScheduler.js';
 
 // Création de l'instance Fastify
 const app = fastify({ logger: true });
@@ -15,7 +16,10 @@ async function startServer() {
     app.decorate('db', dbconnection);
 
     // Enregistrement des routes dans l'instance Fastify
-    registerRoutes(app); // Enregistre les routes
+    registerRoutes(app);
+
+    // Planifier la sauvegarde automatique
+    scheduleAutomaticBackup();
 
     // Démarrage du serveur Fastify
     await app.listen({ port: 3000, host: '0.0.0.0' });
