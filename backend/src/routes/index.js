@@ -1,3 +1,4 @@
+import { backupRoute } from "./backup.js";
 import { createTable } from "./create_table.js";
 import { deleteRoute } from "./delete.js";
 import { exampleRoute } from "./example.js";
@@ -10,5 +11,6 @@ export function registerRoutes(fastify) {
   fastify.register(readRoute); // Enregistre la route /items/:id
   fastify.register(updateRoute); // Enregistre la route /items/:id
   fastify.register(deleteRoute); // Enregistre la route /items/:id
+  fastify.register(backupRoute); // Enregistre la route /backup
 
 }
