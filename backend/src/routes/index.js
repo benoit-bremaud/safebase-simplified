@@ -14,5 +14,4 @@ export function registerRoutes(fastify) {
   fastify.register(deleteRoute); // Enregistre la route /items/:id
   fastify.register(backupRoute); // Enregistre la route /backup
   fastify.register(restoreRoute); // Enregistre la route /restore
-
 }
