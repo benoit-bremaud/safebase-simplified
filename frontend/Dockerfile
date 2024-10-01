@@ -1,20 +1,20 @@
-# Step 1: Use the official Node.js image
+# Étape 1 : Utiliser l'image officielle Node.js
 FROM node:18
 
-# Create and use the /app directory
+# Créer et utiliser le dossier /app
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files
+# Copier les fichiers package.json et package-lock.json
 COPY package*.json ./
 
-# Install dependencies
+# Installer les dépendances
 RUN npm install
 
-# Copy all source code
+# Copier tout le code source de l'application Angular
 COPY . .
 
-# Expose port 4200 for Angular development server
+# Exposer le port 4200 pour le développement Angular
 EXPOSE 4200
 
-# Run the Angular development server
-CMD ["npm", "run", "start", "--", "--host", "0.0.0.0"]
+# Lancer le serveur de développement Angular
+CMD ["npm", "run", "start"]

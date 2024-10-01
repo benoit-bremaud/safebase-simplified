@@ -1,21 +1,6 @@
-import { Routes, provideRouter } from '@angular/router';
-
-import { AppComponent } from './app/app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardComponent } from './app/dashboard/dashboard.component';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { importProvidersFrom } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-];
-
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes),
-    provideHttpClient(),
-    importProvidersFrom(BrowserAnimationsModule),
-  ],
-});
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));

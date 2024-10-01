@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, MatToolbarModule],
-  template: `
-    <mat-toolbar color="primary">
-      <span>SafeBase</span>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
-  `,
-  styleUrls: ['./app.component.scss']
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'frontend';
+}
